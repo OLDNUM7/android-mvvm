@@ -1,5 +1,8 @@
 package com.oldnum7.mvvm;
 
+import android.databinding.BaseObservable;
+import android.databinding.Bindable;
+
 /**
  * <pre>
  *       author : denglin
@@ -8,7 +11,7 @@ package com.oldnum7.mvvm;
  *       version: 1.0
  * </pre>
  */
-public class User {
+public class User  extends BaseObservable {
     private String firstName;
     private String lastName;
 
@@ -17,19 +20,22 @@ public class User {
         this.lastName = lastName;
     }
 
+    @Bindable
     public String getFirstName() {
         return this.firstName;
     }
-
+    @Bindable
     public String getLastName() {
         return this.lastName;
     }
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
+        notifyPropertyChanged(BR.lastName);
     }
 
     public void setFirstName(String firstName) {
         this.firstName = firstName;
+        notifyPropertyChanged(BR.firstName);
     }
 }

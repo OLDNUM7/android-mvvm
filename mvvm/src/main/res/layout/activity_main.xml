@@ -7,6 +7,10 @@
         <variable
             name="user"
             type="com.oldnum7.mvvm.User"/>
+        <!--设置文本-->
+        <variable
+            name="user2"
+            type="com.oldnum7.mvvm.User2"/>
         <!--设置图片-->
         <variable
             name="imageUrl"
@@ -30,12 +34,33 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:hint="TextView01"
             android:text="@{user.firstName}"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:hint="TextView02"
             android:text="@{user.lastName}"/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="user2_TextView00"
+            android:text="@{user2.firstName}"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="user2_TextView01"
+            android:text="@{user2.lastName}"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="user2_TextView02"
+            android:text="@{String.valueOf(user2.age)}"/>
 
         <ImageView
             android:layout_width="wrap_content"
@@ -43,16 +68,22 @@
             app:image="@{imageUrl}"/>
 
         <Button
-            android:text="@{mainActivity.mName}"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:onClick="@{mainActivity.onClick}"/>
+            android:hint="点击事件1"
+            android:onClick="@{mainActivity.onClick}"
+            android:text="@{mainActivity.mName}"/>
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="@{handle.onClick}"
             android:text="点击事件2"/>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
 
     </LinearLayout>
 </layout>
